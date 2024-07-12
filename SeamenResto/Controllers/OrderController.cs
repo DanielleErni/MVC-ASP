@@ -54,8 +54,16 @@ public class OrderController : Controller
         return View(updatedOrder);
     }
 
-
-    
     //[HttpDelete]
+    public IActionResult Delete(int id){
+        var order = _db.Orders.Find(id);
+        if (order == null)
+        {
+            return NotFound();
+        }
+        _db.Orders.Remove(order);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+    }
     
 }
