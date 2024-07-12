@@ -1,0 +1,49 @@
+﻿@model List<OrderEntity>
+@{
+    ViewData["Title"] = "Orders";
+}
+
+<h2>Orders</h2>
+<br>
+<div>
+    <div class="col-md-12">
+        <a asp-action="Create" asp-controller="Order" class="btn btn-success">Create Order</a>
+    </div>
+</div>
+<div>
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>CustomerName</td>
+                    <td>Order</td>
+                    <td>Quantity</td>
+                    <td>Price</td>
+                    <td>Total</td>
+                    <td>Update Action</td>
+                    <td>Delete Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.Order</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Price</td>
+                        <td>@item.Total</td>
+                        <td>
+                            <a asp-action="Update" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-success">Update Order</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-controller="Order" asp-route-id="@item.Id" class="btn btn-danger">Delete Order</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
