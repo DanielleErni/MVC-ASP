@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SeamenResto")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8b4f382d51d4e8ecc8200b993bd7acf97f6661c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8264eb62de80a5b82f3f1aabcb8a01f2910514b")]
 [assembly: System.Reflection.AssemblyProductAttribute("SeamenResto")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SeamenResto")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
