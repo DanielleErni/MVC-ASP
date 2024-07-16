@@ -11,7 +11,7 @@ using SeamenResto.Data;
 namespace SeamenResto.Migrations
 {
     [DbContext(typeof(RestoDb))]
-    [Migration("20240712080506_InitialCreate")]
+    [Migration("20240716082049_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -33,6 +33,9 @@ namespace SeamenResto.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Img")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Order")

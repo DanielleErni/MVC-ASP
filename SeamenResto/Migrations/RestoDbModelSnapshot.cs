@@ -32,6 +32,9 @@ namespace SeamenResto.Migrations
                     b.Property<string>("CustomerName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Img")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Order")
                         .HasColumnType("nvarchar(max)");
 
