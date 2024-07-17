@@ -1,4 +1,4 @@
-﻿@model List<OrderEntity>
+﻿@model List<SeamenResto.Models.OrderEntity>
 @{
     ViewData["Title"] = "Orders";
 }
@@ -26,16 +26,15 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td class="text-center" style="border: solid 1px; padding-top: 2rem;">@item.CustomerName</td>
+                        <td class="text-center" style="border: solid 1px; ">@item.CustomerName</td>
                         <td class="ImgCell">
-                            <img src="@item.Img"/>
+                            <img src="data:image/*;base64,@item.Img" />
                         </td>
-                        <td class="text-center" style="border: solid 1px; padding-top: 2rem;">@item.Order</td>
-                        <td class="text-center" style="border: solid 1px; padding-top: 2rem;">@item.Total</td>
-                        <td class="text-center" style="padding-top: 2rem;">
-                            <div class="dropdown">
+                        <td class="text-center" style="border: solid 1px; ">@item.Order</td>
+                        <td class="text-center" style="border: solid 1px; ">@item.Total</td>
+                        <td class="text-center" style="">
+                            <div class="dropdown" >
                                 <button class="NavMenuAction" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right" style="background-color: rgb(197, 197, 197);" aria-labelledby="dropdownMenuButton">
                                     <a class="dropdown-item update-link" href="@Url.Action("Update", "Order", new { id = item.Id })">
@@ -51,10 +50,8 @@
                 }
             </tbody>
         </table>
-
     </div>
 </div>
-
 
 <script>
     function TriggerAlert() {
@@ -63,26 +60,23 @@
 </script>
 
 <style>
-    .ActionCell{
-        
-    }
-    .ImgCell{
+    .ImgCell {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: none;
+        border: solid 1px;
     }
-    .ImgCell img{
+    .ImgCell img {
+        outline: solid black 0.1rem;
         height: 4.5rem;
         border-radius: 1rem;
-
     }
-   .CreateOrderBttn{
+    .CreateOrderBttn {
         display: flex;
         margin-bottom: 0.3rem;
         justify-content: end;
     }
-    .NavMenuAction{
+    .NavMenuAction {
         height: 1.5rem;
         width: 1.5rem;
         background-image: url('https://www.svgrepo.com/show/524954/settings.svg');
@@ -91,41 +85,41 @@
         background-position: center;
         background-color: inherit;
         border: 0;
-        border-radius: 0.3rem; 
+        border-radius: 0.3rem;
     }
-    .update-link{
+    .update-link {
         background-color: rgb(6, 224, 6);
-        outline:solid 0.1rem black;
-        display: flex; 
-        justify-content: center; 
-        border-radius: 0.3rem; 
-        width: 8rem; 
-        margin-left: 1rem; 
-        margin-right: 1rem; 
+        outline: solid 0.1rem black;
+        display: flex;
+        justify-content: center;
+        border-radius: 0.3rem;
+        width: 8rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
         margin-bottom: 0.44rem;
     }
-    .update-link img{
+    .update-link img {
         width: 1.5rem;
-        height: 1.5rem
+        height: 1.5rem;
     }
     .update-link:hover {
         background-color: green;
         color: white; /* Optional: Change text color to white */
     }
-    .delete-link{
+    .delete-link {
         background-color: rgb(255, 0, 0);
-        outline:solid 0.1rem black;
-        display: flex; 
-        justify-content: center; 
-        border-radius: 0.3rem; 
-        width: 8rem; 
-        margin-left: 1rem; 
-        margin-right: 1rem; 
-        margin-bottom: 0.1rem
+        outline: solid 0.1rem black;
+        display: flex;
+        justify-content: center;
+        border-radius: 0.3rem;
+        width: 8rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        margin-bottom: 0.1rem;
     }
-    .delete-link img{
+    .delete-link img {
         width: 1.5rem;
-        height: 1.5rem
+        height: 1.5rem;
     }
     .delete-link:hover {
         background-color: rgb(177, 0, 0);
@@ -135,7 +129,6 @@
         right: auto;
         left: 0;
     }
-
 </style>
 
 @section Scripts {
